@@ -243,6 +243,69 @@ void modificarPadreFamilia(){
 	return;
 	
 }
+void eliminarPadreFamilia() {
+    FILE *fptr1 = fopen("DB\\listadoPadres\\listaPadres1.txt", "r");
+    FILE *temp = fopen("DB\\listadoPadres\\temp.txt", "w");
+
+    if (fptr1 == NULL || temp == NULL) {
+        printf("Error al abrir los archivos.\n");
+        return;
+    }
+
+    char apellidoBuscado[32];
+    char nombreBuscado[32];
+    char nombreRepresentadoBuscado[32];
+    char linea[128];
+    int encontrado = 0;
+
+    while (getchar() != '\n'); // Limpia el buffer de entrada
+
+    // Solicitar los datos del padre de familia a eliminar
+    printf("Ingrese el apellido del representante que desea eliminar: \n");
+    fgets(apellidoBuscado, 32, stdin);
+    apellidoBuscado[strcspn(apellidoBuscado, "\n")] = 0;
+
+    printf("Ingrese el nombre del representante que desea eliminar: \n");
+    fgets(nombreBuscado, 32, stdin);
+    nombreBuscado[strcspn(nombreBuscado, "\n")] = 0;
+
+    printf("Ingrese el nombre del representado que desea eliminar: \n");
+    fgets(nombreRepresentadoBuscado, 32, stdin);
+    nombreRepresentadoBuscado[strcspn(nombreRepresentadoBuscado, "\n")] = 0;
+
+    // Verificar y copiar líneas que no coincidan con el registro a eliminar
+    while (fgets(linea, 128, fptr1)) {
+        if (strstr(linea, apellidoBuscado) && strstr(linea, "Apellido: ") &&
+            strstr(fgets(linea, 128, fptr1), nombreBuscado) && strstr(linea, "Nombre: ") &&
+            strstr(fgets(linea, 128, fptr1), nombreRepresentadoBuscado) && strstr(linea, "Nombre del representado: ")) {
+            encontrado = 1;
+
+            // Saltar hasta el final del registro
+            while (fgets(linea, 128, fptr1) && strcmp(linea, "-----------------------------------------------------------------------------------------\n") != 0);
+            continue;
+        }
+
+        // Copiar línea al archivo temporal
+        fputs(linea, temp);
+    }
+
+    fclose(fptr1);
+    fclose(temp);
+
+    if (encontrado) {
+        // Reemplazar el archivo original con el temporal
+        remove("DB\\listadoPadres\\listaPadres1.txt");
+        rename("DB\\listadoPadres\\temp.txt", "DB\\listadoPadres\\listaPadres1.txt");
+        printf("El registro ha sido eliminado exitosamente.\n");
+    } else {
+        remove("DB\\listadoPadres\\temp.txt");
+        printf("No se encontró ningún registro que coincida con los datos ingresados.\n");
+    }
+
+    return;
+}
+
+
 
 
 
