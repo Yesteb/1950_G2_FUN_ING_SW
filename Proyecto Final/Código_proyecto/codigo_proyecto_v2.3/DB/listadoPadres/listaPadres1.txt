@@ -1,0 +1,11 @@
+
+Apellido: Sancho
+Nombre: Pedro
+Nombre del representado: Pedrito
+Direccion del domicilio: Illescas_Marcopamba_Magdalena
+-----------------------------------------------------------------------------------------
+Apellido: Rodriguez
+Nombre: Juan
+Nombre del representado: Panchito
+Direccion del domicilio: Peie_ASdasd_Chilibulo
+-----------------------------------------------------------------------------------------
