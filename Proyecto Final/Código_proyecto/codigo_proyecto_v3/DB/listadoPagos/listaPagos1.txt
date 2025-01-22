@@ -1,0 +1,6 @@
+Apellido: RODRIGUEZ
+Nombre: JUAN
+Nombre del Representado: JUANITO
+Monto del pago efectuado: 300.12
+Fecha y hora del registro de pago: 2025/01/22 a las 18:17 h
+-----------------------------------------------------------------------------------------

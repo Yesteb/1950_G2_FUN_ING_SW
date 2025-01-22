@@ -1,0 +1,21 @@
+
+Apellido: SANCHO
+Nombre: PEDRO
+Nombre del representado: PEDRITO
+Direccion del domicilio: ILLESCAS_MARCOPAMBA_MAGDALENA
+-----------------------------------------------------------------------------------------
+Apellido: RODRIGUEZ
+Nombre: JUAN
+Nombre del representado: PANCHITO
+Direccion del domicilio: PEIE_ASDASD_CHILIBULO
+-----------------------------------------------------------------------------------------
+Apellido: RODRIGUEZ
+Nombre: JUAN
+Nombre del representado: FANTASMITO
+Direccion del domicilio: AVENIDA_ANGAMARCA_MENA2
+-----------------------------------------------------------------------------------------
+Apellido: ROMULO
+Nombre: PEDRO
+Nombre del representado: PEDRITO
+Direccion del domicilio: ILLESCAS_MARCOPAMBA_MAGDALENA
+-----------------------------------------------------------------------------------------
