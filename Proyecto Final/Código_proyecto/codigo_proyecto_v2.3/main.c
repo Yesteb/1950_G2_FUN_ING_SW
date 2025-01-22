@@ -21,7 +21,7 @@ int main(){
 			case 3:
 				modificarPadreFamilia();
 				break;
-			case 7:
+			case 4:
 				return 0;
 			default:
 				printf("Opcion Invalida. ...");
