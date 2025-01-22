@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 /*Estos valores deben cambiar si se cambia
- 	el usuario o la contraseÒa*/
+ 	el usuario o la contrase√±a*/
 #define passwordSave "contra"
 #define usuarioSave "blanca"
 //const char *passwordSave = "contra";
@@ -160,8 +160,8 @@ void RegistrarPagos(){
 	registroPg.nombrePdr[strcspn(registroPg.nombrePdr, "\n")]= 0;
 	//Syntaxis de strcspn: strcspn(const char *string1, const char *string2);
 	
-	/*busca la primera apariciÛn de un car·cter en string1 que pertenece al conjunto de caracteres 
-	especificado por string2 y devolver· la posiciÛn en name en la cual fue encontrado el match (Los caracteres nulos no se tienen en cuenta en la b˙squeda: /0)*/
+	/*busca la primera aparici√≥n de un car√°cter en string1 que pertenece al conjunto de caracteres 
+	especificado por string2 y devolver√° la posici√≥n en name en la cual fue encontrado el match (Los caracteres nulos no se tienen en cuenta en la b√∫squeda: /0)*/
 	
 	printf("Ingrese el primer apellido del representante: \n");
 	fgets(registroPg.apellidoPdr, 32, stdin);
@@ -188,7 +188,7 @@ void RegistrarPagos(){
 	return;
 }
 
-//La funciÛn strstr en C se utiliza para buscar la primera apariciÛn de una subcadena dentro de una cadena dada
+//La funci√≥n strstr en C se utiliza para buscar la primera aparici√≥n de una subcadena dentro de una cadena dada
 //syntax: strstr(char * str, char * substring);
 
 void modificarPadreFamilia(){
@@ -202,27 +202,48 @@ void modificarPadreFamilia(){
 	printf("Ingrese el apellido del representante que desea encontrar\n");
 	fgets(apellidoBuscado, 32, stdin);
 	apellidoBuscado[strcspn(apellidoBuscado, "\n")] = 0;
-	
+	printf("Ingrese el nombre del representante que desea encontrar\n");
+	fgets(nombreBuscado, 32, stdin);
+	nombreBuscado[strcspn(nombreBuscado, "\n")] = 0;
+	printf("Ingrese el nombre del representado que desea encontrar\n");
+	fgets(nombreRepresentadoBuscado, 32, stdin);
+	nombreBuscado[strcspn(nombreBuscado, "\n")] = 0;
 	while(fgets(linea, 128, fptr1)){
 		if(strstr(linea, apellidoBuscado) && strstr(linea, "Apellido: ")){ //La primera aparicion del apellidoBuscado y la primera aparicion de la cadena de caracteres "Apellido: " en la informacion guardada en la variable linea tiene que cumplirse para hacer el proceso             
-			encontrar=1;
+			encontrar=encontrar + 1;
 		printf("Informacion encontrada!\n");
 		printf("Procesando....\n");
+	
 		 
-		 do {
+	/*	 do {
 			printf("%s", linea);
 		} while (fgets(linea, 128, fptr1) && strcmp(linea,"-----------------------------------------------------------------------------------------")!=0);
 		}
-			/*	if(!encontrar){
+			if(!encontrar){
 			printf("Informacion no encontrada\n");
 			printf("No se encontro alguna informacion relacionada con el apellido: %s\n", apellidoBuscado);*/
 	}
-	
+}
+	while(fgets(linea, 128, fptr1)){
+	if(strstr(linea, nombreBuscado) && strstr(linea, "Nombre: ")){ //La primera aparicion del apellidoBuscado y la primera aparicion de la cadena de caracteres "Apellido: " en la informacion guardada en la variable linea tiene que cumplirse para hacer el proceso             
+		encontrar=encontrar + 1;
+	printf("Informacion encontrada!\n");
+	printf("Procesando....\n");
+	}
+}
+	while(fgets(linea, 128, fptr1)){
+	if(strstr(linea, nombreRepresentadoBuscado) && strstr(linea, "Nombre del representado:: ")){ //La primera aparicion del apellidoBuscado y la primera aparicion de la cadena de caracteres "Apellido: " en la informacion guardada en la variable linea tiene que cumplirse para hacer el proceso             
+		encontrar=encontrar + 1;
+	printf("Informacion encontrada!\n");
+	printf("Procesando....\n");
 	fclose(fptr1);
-		
+	}
+}
+
 	return;
 	
 }
+
 
 
 
