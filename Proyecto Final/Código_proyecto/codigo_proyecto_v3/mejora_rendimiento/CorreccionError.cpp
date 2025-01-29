@@ -16,11 +16,11 @@ typedef struct {
 char*** leerArchivoCSV(const char* filepath, char sep, int numColumnas, int* numFilas) {
     FILE *f = fopen(filepath, "r");
     if (!f) {
-        perror("Error opening file");
+        perror("Error al abrir el archivo");
         return NULL;
     }
 
-    // Contar el número de filas en el archivo CSV
+    // Contar el nÃºmero de filas en el archivo CSV
     char line[1024];
     *numFilas = 0;
     while (fgets(line, sizeof(line), f)) {
@@ -32,20 +32,20 @@ char*** leerArchivoCSV(const char* filepath, char sep, int numColumnas, int* num
     for (int i = 0; i < *numFilas; i++) {
         csv[i] = (char **)malloc(numColumnas * sizeof(char *));
         for (int j = 0; j < numColumnas; j++) {
-            csv[i][j] = NULL; // Inicializamos a NULL para usar realloc más tarde
+            csv[i][j] = NULL; // Inicializamos a NULL para usar realloc mÃ¡s tarde
         }
     }
 
-    // Volver al principio del archivo para leer las líneas
+    // Volver al principio del archivo para leer las lÃ­neas
     rewind(f);
 
-    // Leer las líneas y separarlas por el delimitador
+    // Leer las lÃ­neas y separarlas por el delimitador
     int fila = 0;
     while (fgets(line, sizeof(line), f)) {
         char *token = strtok(line, &sep);
         int columna = 0;
         while (token != NULL && columna < numColumnas) {
-            // Asignar memoria dinámicamente para cada campo
+            // Asignar memoria dinÃ¡micamente para cada campo
             csv[fila][columna] = (char *)malloc((strlen(token) + 1) * sizeof(char)); // +1 para el '\0'
             strncpy(csv[fila][columna], token, strlen(token) + 1);
             token = strtok(NULL, &sep);
