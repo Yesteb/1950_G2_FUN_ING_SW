@@ -1,0 +1,12 @@
+Apellido: RODRIGUEZ
+Nombre: JUAN
+Nombre del Representado: JUANITO
+Monto del pago efectuado: 300.12
+Fecha y hora del registro de pago: 2025/01/22 a las 18:17 h
+-----------------------------------------------------------------------------------------
+Apellido: Andrade
+Nombre: Julio
+Nombre del Representado: Anthony
+Monto del pago efectuado: 273.75
+Fecha y hora del registro de pago: 2025/01/29 a las 16:54 h
+-----------------------------------------------------------------------------------------
