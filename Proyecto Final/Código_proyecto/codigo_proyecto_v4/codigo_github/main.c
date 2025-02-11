@@ -19,23 +19,20 @@ int main(){
 				RegistrarPagos();
 				break;
 			case 3:
-				imprimirArchivo("DB\\listadoRepresentante\\listaRepresentantes1.txt", 16384);
-				getch();
-				break;
-			case 4:
 				printf("Ingrese el ID del producto que desea actualizar: ");
 				scanf("%31s", idRepresentante);
 				modificarPadreFamilia(idRepresentante);
 				break;
-			case 5:
+			case 4:
 				imprimirArchivo("DB\\listadoPagos\\listaPagos1.txt", 16384);
 				getch();
 				break;
-			case 6:
+			case 5:
 				return 0;
 			default:
 				printf("Opcion Invalida. ...");
 				return;
+				
 		}
 	}
 	
