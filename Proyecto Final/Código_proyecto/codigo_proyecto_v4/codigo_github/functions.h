@@ -1,7 +1,7 @@
 //functions.h
 #include "functions.c"
 
-void imprimirArchivo();
+void historialPagos();
 
 void IniciarSesion();
 
