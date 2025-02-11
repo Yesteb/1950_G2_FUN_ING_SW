@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 /*Estos valores deben cambiar si se cambia
- 	el usuario o la contraseÒa*/
+ 	el usuario o la contrase√±a*/
 #define passwordSave "contra"
 #define usuarioSave "blanca"
 //const char *passwordSave = "contra";
@@ -41,7 +41,7 @@
  * @param int charMax tamanio maximo del buffer.
  * @return void
  */
-void imprimirArchivo(char *rutaArchivo, int charMax){
+void historialPagos(char *rutaArchivo, int charMax){
 	FILE *fptr = fopen(rutaArchivo, "r");
 	char buffer[charMax];
 	
@@ -161,8 +161,8 @@ void RegistrarPagos(){
 	registroPg.nombreRprsant[strcspn(registroPg.nombreRprsant, "\n")]= 0;
 	
 	
-	/*busca la primera apariciÛn de un car·cter en string1 que pertenece al conjunto de caracteres 
-	especificado por string2 y devolver· la posiciÛn en name en la cual fue encontrado el match (Los caracteres nulos no se tienen en cuenta en la b˙squeda: /0)*/
+	/*busca la primera aparici√≥n de un car√°cter en string1 que pertenece al conjunto de caracteres 
+	especificado por string2 y devolver√° la posici√≥n en name en la cual fue encontrado el match (Los caracteres nulos no se tienen en cuenta en la b√∫squeda: /0)*/
 	
 	printf("Ingrese el primer apellido del representante: (Escriba todo en mayusculas o minusculas)\n");
 	fgets(registroPg.apellidoRprsant, 32, stdin);
@@ -189,7 +189,7 @@ void RegistrarPagos(){
 	return;
 }
 
-//La funciÛn strstr en C se utiliza para buscar la primera apariciÛn de una subcadena dentro de una cadena dada
+//La funci√≥n strstr en C se utiliza para buscar la primera aparici√≥n de una subcadena dentro de una cadena dada
 //syntax: strstr(char * str, char * substring);
 //Esta funcion va a permitir editar la informacion registrada anteriormente
 void modificarPadreFamilia(char *idRepresentante){
@@ -201,12 +201,12 @@ void modificarPadreFamilia(char *idRepresentante){
     
 	while (getchar() != '\n');
     while (fgets(linea, 128, fptr)) {
-        // Buscar la lÌnea que contiene el ID del producto
+        // Buscar la l√≠nea que contiene el ID del producto
         if (strstr(linea, idRepresentante) && strstr(linea, "ID: ")) {
             encontrado = 1;
 
 
-            // Pedir nueva informaciÛn al usuario
+            // Pedir nueva informaci√≥n al usuario
             char nuevoNombre[32];
             char nuevoApellido[32];
             char nuevoCP[32];
@@ -240,7 +240,7 @@ void modificarPadreFamilia(char *idRepresentante){
             fgets(nuevoNombreHijo,32, stdin);
             nuevoNombreHijo[strcspn(nuevoNombreHijo, "\n")] = 0; 
             
-            // Escribir la nueva informaciÛn en fptr1
+            // Escribir la nueva informaci√≥n en fptr1
             fprintf(fptr1, "ID: %d\n", idRepresentante);
 			fprintf(fptr1, "Apellido: %s\n", nuevoNombre);
 			fprintf(fptr1, "Nombre: %s\n", nuevoApellido);
@@ -263,10 +263,10 @@ void modificarPadreFamilia(char *idRepresentante){
     if (encontrado) {
         remove("DB\\listadoRepresentante\\listaRepresentantes1.txt");
         rename("DB\\listadoRepresentante\\temp.txt", "DB\\listadoRepresentante\\listaRepresentantes1.txt");
-        printf("La informaciÛn del representante con ID '%s' ha sido actualizada.\n", idRepresentante);
+        printf("La informaci√≥n del representante con ID '%s' ha sido actualizada.\n", idRepresentante);
     } else {
         remove("DB\\listadoRepresentante\\temp.txt"); 
-        printf("No se encontrÛ algun representante con el ID %s.\n", idRepresentante);
+        printf("No se encontr√≥ algun representante con el ID %s.\n", idRepresentante);
     }
     getch();
     return;
