@@ -1,0 +1,22 @@
+Apellido: Rodro
+Nombre: Juan
+Nombre del Representado: Juanito
+Monto del pago efectuado: 273.75
+Fecha y hora del registro de pago: 2025/02/11 a las 17:13 h
+-----------------------------------------------------------------------------------------
+Apellido: Mena
+Nombre: Pedro
+Nombre del Representado: Alana
+Monto del pago efectuado: 300.00
+Fecha y hora del registro de pago: 2025/02/11 a las 17:58 h
+-----------------------------------------------------------------------------------------
+
+ID: 1729044485
+Apellido: Petra
+Nombre: ELena
+Correo electronico: elenapetra@outlook.com
+Numero celular: 991421253
+Nombre del Representado: Victoria
+Monto del pago efectuado: 300.23
+Fecha y hora del registro de pago: 2025/02/11 a las 19:40 h
+-----------------------------------------------------------------------------------------
