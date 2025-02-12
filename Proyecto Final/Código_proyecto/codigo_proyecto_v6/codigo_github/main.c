@@ -9,7 +9,7 @@ int main(){
 
 	while(1){
 		
-		historialPagos("DB\\menu.txt", 234);
+		imprimirArchivos("DB\\menu.txt", 234);
 		scanf("%d", &opc);
 		switch(opc){
 			case 1:
