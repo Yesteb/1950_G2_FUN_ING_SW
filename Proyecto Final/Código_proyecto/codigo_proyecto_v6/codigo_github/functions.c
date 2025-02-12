@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 /*Estos valores deben cambiar si se cambia
- 	el usuario o la contraseña*/
+ 	el usuario o la contraseÃ±a*/
 #define passwordSave "contra"
 #define usuarioSave "blanca"
 //const char *passwordSave = "contra";
@@ -52,7 +52,7 @@
 	
  }
 
- void historialPagos(char *rutaArchivo, int charMax) {
+ void imprimirArchivos(char *rutaArchivo, int charMax) {
     FILE *fptr = fopen(rutaArchivo, "r");
     if (fptr == NULL) {
         printf("No se ha encontrado el archivo!\n");
@@ -209,8 +209,8 @@ void RegistrarPagos(){
 	registroPg.nombreRprsant[strcspn(registroPg.nombreRprsant, "\n")]= 0;
 	
 	
-	/*busca la primera aparición de un carácter en string1 que pertenece al conjunto de caracteres 
-	especificado por string2 y devolverá la posición en name en la cual fue encontrado el match (Los caracteres nulos no se tienen en cuenta en la búsqueda: /0)*/
+	/*busca la primera apariciÃ³n de un carÃ¡cter en string1 que pertenece al conjunto de caracteres 
+	especificado por string2 y devolverÃ¡ la posiciÃ³n en name en la cual fue encontrado el match (Los caracteres nulos no se tienen en cuenta en la bÃºsqueda: /0)*/
 
 	puts("Ingrese el primer apellido del representante: (Escriba todo en mayusculas o minusculas)");
 	fgets(registroPg.apellidoRprsant, 32, stdin);
@@ -277,13 +277,13 @@ void buscarRepresentante() {
     }
     
     if (!encontrado) {
-        printf("No se encontró ningún representante con el criterio '%s'.\n", criterio);
+        printf("No se encontrÃ³ ningÃºn representante con el criterio '%s'.\n", criterio);
     }
     
     fclose(fptr);
 }
 
-// Función para buscar un pago por nombre del representante o estudiante
+// FunciÃ³n para buscar un pago por nombre del representante o estudiante
 void buscarPagoApellido() {
     FILE *fptr = fopen("DB/listadoPagos/listaPagos1.txt", "r");
     if (fptr == NULL) {
@@ -349,7 +349,7 @@ void buscarPagoID() {
     
     fclose(fptr);
 }
-//La función strstr en C se utiliza para buscar la primera aparición de una subcadena dentro de una cadena dada
+//La funciÃ³n strstr en C se utiliza para buscar la primera apariciÃ³n de una subcadena dentro de una cadena dada
 //syntax: strstr(char * str, char * substring);
 //Esta funcion va a permitir editar la informacion registrada anteriormente
 void modificarPadreFamilia(char *idRepresentante){
@@ -361,12 +361,12 @@ void modificarPadreFamilia(char *idRepresentante){
     
 	while (getchar() != '\n');
     while (fgets(linea, 128, fptr)) {
-        // Buscar la línea que contiene el ID del producto
+        // Buscar la lÃ­nea que contiene el ID del producto
         if (strstr(linea, idRepresentante) && strstr(linea, "ID: ")) {
             encontrado = 1;
 
 
-            // Pedir nueva información al usuario
+            // Pedir nueva informaciÃ³n al usuario
             char nuevoNombre[32];
             char nuevoApellido[32];
             char nuevoCP[32];
@@ -403,7 +403,7 @@ void modificarPadreFamilia(char *idRepresentante){
             fgets(nuevoNombreHijo,32, stdin);
             nuevoNombreHijo[strcspn(nuevoNombreHijo, "\n")] = 0; 
             
-            // Escribir la nueva información en fptr1
+            // Escribir la nueva informaciÃ³n en fptr1
             fprintf(fptr1, "ID: %d\n", idRepresentante);
 			fprintf(fptr1, "Apellido: %s\n", nuevoNombre);
 			fprintf(fptr1, "Nombre: %s\n", nuevoApellido);
