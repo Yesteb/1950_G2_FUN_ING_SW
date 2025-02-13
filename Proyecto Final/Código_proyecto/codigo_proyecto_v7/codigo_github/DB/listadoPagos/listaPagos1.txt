@@ -1,0 +1,18 @@
+
+ID: 1729044485
+Apellido: Petra
+Nombre: ELena
+Correo electronico: elenapetra@outlook.com
+Numero celular: 991421253
+Nombre del Representado: Victoria
+Monto del pago efectuado: 300.23
+Fecha y hora del registro de pago: 2025/02/11 a las 19:40 h
+-----------------------------------------------------------------------------------------
+
+ID: 1308333010
+Apellido: Sandra
+Nombre: Alana
+Nombre del Representado: Juan
+Monto del pago efectuado: 270.23
+Fecha y hora del registro de pago: 2025/02/12 a las 20:36 h
+-----------------------------------------------------------------------------------------
